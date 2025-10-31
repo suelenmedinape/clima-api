@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
+  <title>Clima</title>
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <div class="dashboard-wrapper">
+      <!-- Top Section - Main Cards -->
+      <div class="grid-top">
+        <!-- Main Temperature Card - Left -->
+        <div class="weather-card card-temperature">
+          <div class="card-content">
+            <div class="city-info">
+              <h2 class="city-title">Cidade</h2>
+              <p class="city-subtitle">
+                Rain <span class="weather-description">Moderate Rain</span>
+              </p>
+            </div>
+
+            <div class="temperature-info">
+              <div class="temperature-main">
+                25<span class="temperature-unit">°C</span>
+              </div>
+              <div class="temperature-details">
+                <p>Sensação térmica 24°C</p>
+                <p class="temp-minmax">
+                  <span>Min 22°C</span>
+                  <span>Max 28°C</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather Icon Card - Center -->
+        <div class="weather-card card-icon" id="clima-card">
+          <!-- ANIMATION -->
+        </div>
+
+        <!-- Right Side Grid - Sun times, Wind, Pressure -->
+        <div class="grid-right">
+          <div class="weather-card card-small">
+            <div class="card-small-content">
+              <p class="card-label">por do sol</p>
+              <svg class="card-icon-small sunset" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 10V2" />
+                <path d="m4.93 10.93 1.41 1.41" />
+                <path d="M2 18h2" />
+                <path d="M20 18h2" />
+                <path d="m19.07 10.93-1.41 1.41" />
+                <path d="M22 22H2" />
+                <path d="m16 6-4 4-4-4" />
+              </svg>
+              <p class="card-value">18:30</p>
+            </div>
+          </div>
+
+          <div class="weather-card card-small">
+            <div class="card-small-content">
+              <p class="card-label">nascer do sol</p>
+              <svg class="card-icon-small sunrise" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 2v8" />
+                <path d="m4.93 10.93 1.41 1.41" />
+                <path d="M2 18h2" />
+                <path d="M20 18h2" />
+                <path d="m19.07 10.93-1.41 1.41" />
+                <path d="M22 22H2" />
+                <path d="m8 6 4-4 4 4" />
+              </svg>
+              <p class="card-value">06:30</p>
+            </div>
+          </div>
+
+          <div class="weather-card card-small">
+            <div class="card-small-content">
+              <p class="card-label">vento</p>
+              <svg class="card-icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2" />
+                <path d="M9.6 4.6A2 2 0 1 1 11 8H2" />
+                <path d="M12.6 19.4A2 2 0 1 0 14 16H2" />
+              </svg>
+              <p class="card-value wind-speed">4.1 m/s</p>
+            </div>
+          </div>
+
+          <div class="weather-card card-small">
+            <div class="card-small-content">
+              <p class="card-label">direção do vento</p>
+              <svg class="card-icon-small" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 14 4-4" />
+                <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+              </svg>
+              <p class="card-value wind-deg">121°</p>
+            </div>
+          </div>
+
+          <div class="weather-card card-pressure">
+            <div class="card-small-content">
+              <p class="card-label">pressão</p>
+              <p class="card-value-large">1021 hPa</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section - Info Grid -->
+      <div class="grid-bottom">
+        <div class="weather-card card-small">
+          <div class="card-small-content">
+            <p class="card-label">nuvens</p>
+            <svg class="card-icon-medium" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+            </svg>
+            <p class="card-value-medium">83%</p>
+          </div>
+        </div>
+
+        <div class="weather-card card-small">
+          <div class="card-small-content">
+            <p class="card-label">umidade</p>
+            <svg class="card-icon-medium primary" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+            </svg>
+            <p class="card-value-medium">60%</p>
+          </div>
+        </div>
+
+        <div class="weather-card card-small">
+          <div class="card-small-content">
+            <p class="card-label label-chuva">chuva</p>
+            <svg class="card-icon-medium primary" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
+              <path d="M16 14v6" />
+              <path d="M8 14v6" />
+              <path d="M12 16v6" />
+            </svg>
+            <p class="card-value-medium">2.7 mm</p>
+          </div>
+        </div>
+
+        <div class="weather-card card-small">
+          <div class="card-small-content">
+            <p class="card-label">visibilidade</p>
+            <svg class="card-icon-medium" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            <p class="card-value-medium card-visibilidade">10.0 km</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/animejs@3.0.0/lib/anime.min.js"></script>
+  <script src="script.js" type="module"></script>
+</body>
+
+</html>

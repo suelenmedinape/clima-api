@@ -1,0 +1,44 @@
+{
+  "coord": {
+    "lon": 41.891,
+    "lat": 21.203
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 296.36,
+    "feels_like": 295.02,
+    "temp_min": 296.36,
+    "temp_max": 296.36,
+    "pressure": 1016,
+    "humidity": 11,
+    "sea_level": 1016,
+    "grnd_level": 879
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 7.38,
+    "deg": 109,
+    "gust": 13.33
+  },
+  "clouds": {
+    "all": 0
+  },
+  "dt": 1761589261,
+  "sys": {
+    "country": "SA",
+    "sunrise": 1761534765,
+    "sunset": 1761575978
+  },
+  "timezone": 10800,
+  "id": 101322,
+  "name": "Turabah",
+  "cod": 200
+}

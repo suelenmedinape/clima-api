@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"401bde8410dbad78","x":-480,"y":200,"width":250,"height":60,"color":"6","type":"text","text":"O sistema obtem a latitude e a longitude do usuario"},
+		{"id":"b77b81259f051fed","x":240,"y":200,"width":250,"height":60,"color":"2","type":"text","text":"O usuário acessa o site"},
+		{"id":"0238c9d636517ec7","x":-480,"y":80,"width":250,"height":80,"color":"6","type":"text","text":"A `api` é chamada e os dados climaticos sao obtidos"},
+		{"id":"511206428839be78","x":-480,"y":-40,"width":250,"height":80,"color":"6","type":"text","text":"O sistema envia o main e as cores dos card e plano são aplicadas ao site"},
+		{"id":"47d635eedd60083b","x":-480,"y":-200,"width":250,"height":120,"color":"6","type":"text","text":"O description é enviado e no card de eventos é mostrado o clima atual com a animação"},
+		{"id":"753653da0026fe8b","x":240,"y":-170,"width":250,"height":60,"color":"2","type":"text","text":"O usuário vê o clima atual"}
+	],
+	"edges":[
+		{"id":"d85495bcd9966bf0","fromNode":"b77b81259f051fed","fromSide":"left","toNode":"401bde8410dbad78","toSide":"right"},
+		{"id":"4c9faa6afb3e1d71","fromNode":"401bde8410dbad78","fromSide":"top","toNode":"0238c9d636517ec7","toSide":"bottom"},
+		{"id":"11fe4d1244cc14bd","fromNode":"0238c9d636517ec7","fromSide":"top","toNode":"511206428839be78","toSide":"bottom"},
+		{"id":"aca53bcf24a04bcb","fromNode":"511206428839be78","fromSide":"top","toNode":"47d635eedd60083b","toSide":"bottom"},
+		{"id":"f7e28c86769d27c3","fromNode":"47d635eedd60083b","fromSide":"right","toNode":"753653da0026fe8b","toSide":"left"}
+	]
+}
