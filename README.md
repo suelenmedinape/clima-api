@@ -2,7 +2,7 @@
 
 Um aplicativo web simples e elegante que exibe a previsão do tempo atual, utilizando animações dinâmicas em JavaScript para representar visualmente as condições climáticas.
 
-> **Dica:** Grave um GIF da sua tela para mostrar o projeto funcionando e substitua o link acima! Ferramentas como ScreenToGif (Windows) ou Kap (Mac) podem ajudar.
+![Sou uma imagem](Design%20s.gif)
 
 ## ✨ Funcionalidades
 
